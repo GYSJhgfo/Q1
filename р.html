@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Соціальна допомога</title>
+
+    <!-- Іконка у вкладці -->
+    <link rel="icon" href="https://tascombank.ua/static/media/TAS_logo_slogan.svg">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 15px 40px;
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .logo img {
+            width: 180px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #2c2c54;
+        }
+
+        .menu {
+            font-size: 16px;
+            margin-left: auto;
+        }
+
+        .form-container {
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container button:hover {
+            background-color: #3b3f8c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src="https://tascombank.ua/static/media/TAS_logo_slogan.svg" alt="Логотип ТАСКОМБАНК">
+            </a>
+        </div>
+        <div class="menu">
+            UA | Людям із порушенням зору | ☰
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+
+    <!-- Посилання на форму -->
+    <div class="container">
+        <p style="text-align:center;">
+            <a href="#form" class="btn" style="background-color:#6c5ce7; color:white; padding:10px 20px; text-decoration:none; border-radius:20px;">Подати заявку на допомогу</a>
+        </p>
+    </div>
+
+    <!-- Форма для введення даних -->
+    <div id="form" class="form-container">
+        <h2>Форма заявки</h2>
+        <form action="/submit" method="POST">
+            <label for="fullName">ПІБ</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Ваше повне ім'я" required>
+
+            <label for="email">Електронна пошта</label>
+            <input type="email" id="email" name="email" placeholder="Ваша електронна пошта" required>
+
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+
+            <label for="address">Адреса</label>
+            <input type="text" id="address" name="address" placeholder="Ваша адреса" required>
+
+            <!-- Паспортні дані -->
+            <label for="passportSeries">Серія паспорта</label>
+            <input type="text" id="passportSeries" name="passportSeries" placeholder="Серія паспорта" required>
+
+            <label for="passportNumber">Номер паспорта</label>
+            <input type="text" id="passportNumber" name="passportNumber" placeholder="Номер паспорта" required>
+
+            <label for="passportIssueDate">Дата видачі</label>
+            <input type="date" id="passportIssueDate" name="passportIssueDate" required>
+
+            <label for="message">Коментарі</label>
+            <textarea id="message" name="message" placeholder="Введіть будь-які додаткові коментарі" rows="4"></textarea>
+
+            <button type="submit">Відправити заявку</button>
+        </form>
+    </div>
+<div id="confirmationMessage" class="confirmation-message">
+            Дякуємо! Ваша заявка була успішно відправлена.
+        </div>
+    </div>
+
+    <script>
+        // Функція для обробки події відправки форми
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Запобігає перезавантаженню сторінки при відправці форми
+
+            // Показуємо повідомлення про успішну відправку
+            document.getElementById('confirmationMessage').style.display = 'block';
+
+            // Очищаємо форму
+            document.getElementById('applicationForm').reset();
+        }
+    </script>
+</body>
+</html>
