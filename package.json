@@ -14,8 +14,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "server -s . -l 3000",
-    "build": "echo 'No build needed'"
+    "start": "server -s . -l 3000"
   },
     "dependencies": {
       "server": "^1.0.42"
