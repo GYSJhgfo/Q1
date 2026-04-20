@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "server -p $PORT"
+    "start": "npx serve -l $PORT"
   },
     "dependencies": {
       "server": "^1.0.42"
